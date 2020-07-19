@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue essential</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container mt-4">
+        <div id="app">
+            <img class="img-fluid" :src="data.img" :alt="data.name">
+            <h2>{{ data.name }}</h2>
+            <p>{{ data.des }}</p>
+            <p>${{ data.price }}</p>
+        </div>
+
+    </div>
+    <script>
+        var data = {
+            'name': 'djfkdfd',
+            'des': 'djfkdfdkjfkdj',
+            'img': 'img.jpg',
+            'price': 99
+        }
+        var app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    data
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

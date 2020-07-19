@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+         <div id="app">
+             <P>
+                 <strong>Bound:</strong><br>
+                 <span>P{{ name }}</span>
+             </P>
+             <P>
+                 <strong>Parsed:</strong><br>
+                 <span v-html="name+'---'"></span>
+             </P>
+             <P v-once>
+                 <strong>Unchangable:</strong><br>
+                 <span>{{ name }}</span>
+             </P>
+            
+                 <h5>Text:</h5>
+                 <textarea rows="3" class="form-controle" v-model="name"></textarea>
+             
+
+         </div>
+    </div>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data() {
+            return {
+                name:" Fluffy ski Coat"
+            }
+        },
+    })
+</script>
+</body>
+</html>

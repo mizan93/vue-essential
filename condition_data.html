@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue essential</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container mt-4 text-center">
+        <div id="app">
+            <form class="form-inline mr-auto" method="get" action="">
+                <label for="max">Max</label>
+                 <input type="text" class="form-control" name="" id="max" v-model="max">
+
+            </form>
+            <input class="custom-range" type="range" min="0" max="200" v-model="max" name="">
+            <div
+             v-for="d in item"
+             v-if="d.price<=Number(max)">
+                
+                 <div>
+                <img class="img-fluid" :src="d.img" :alt="d.name">
+                <h2>{{ d.name }}</h2>
+                <p>{{ d.des }}</p>
+                <p>${{d.price }}</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    <script>
+        var data ={ 
+            max:250,
+            item:
+            [
+                {
+            'name': 'djfkdfd',
+            'des': 'djfkdfdkjfkdj',
+            'img': 'img.jpg',
+            'price': 233
+        },
+                {
+            'name': 'djfkdfd',
+            'des': 'djfkdfdkjfkdj',
+            'img': 'img.jpg',
+            'price': 239
+        },
+                {
+            'name': 'djfkdfd',
+            'des': 'djfkdfdkjfkdj',
+            'img': 'img.jpg',
+            'price': 45
+        },
+    {
+                'name': 'djfkdfd',
+                'des': 'djfkdfdkjfkdj',
+                'img': 'img.jpg',
+                'price': 99
+            }
+    ]
+        }
+        var app = new Vue({
+            el: '#app',
+            data:data
+              
+          
+        })
+    </script>
+</body>
+
+</html>
